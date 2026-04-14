@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denver Jude Zaulda Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+ 
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: radial-gradient(circle at top, #0a192f, #020c1b);
+      color: #ccd6f6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #64ffda33;
+    }
+
+    header h1 {
+      color: #64ffda;
+      text-shadow: 0 0 10px #64ffda;
+    }
+
+    nav a {
+      color: #ccd6f6;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #64ffda;
+      text-shadow: 0 0 5px #64ffda;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 60px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #64ffda;
+      box-shadow: 0 0 20px #64ffda66;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #64ffda;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      color: #64ffda;
+      text-shadow: 0 0 20px #64ffda;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      color: #8892b0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: 1px solid #64ffda;
+      color: #64ffda;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #64ffda44;
+    }
+
+    .btn:hover {
+      background: #64ffda;
+      color: #020c1b;
+      box-shadow: 0 0 20px #64ffda;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #112240;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid #64ffda22;
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 20px #64ffda55;
+      border-color: #64ffda;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020c1b;
+      margin-top: 40px;
+      color: #8892b0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.8s;
+    }
+
+    footer.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Background animation */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #64ffda22 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBg 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBg {
+      from { transform: translate(0,0); }
+      to { transform: translate(-200px,-200px); }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>judexdj.dev</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="profile.jpg" alt="My Photo">
+  <h2>Hi, I'm Denver Jude Zaulda 🎮</h2>
+  <p>Cat Lover| Gamer | Tech Enthusiast</p>
+  <a href="#projects" class="btn">Enter Portfolio</a>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hi there! I'm Denver Jude Zaulda, a 20-year-old from Cebu City with a passion for all things tech. You could say I'm "chronically online," but it's more than just a hobby – being a tech enthusiast is a fundamental part of who I am, like a missing piece that completes my identity.
+When I'm not diving deep into the digital world, you can find me gaming, getting lost in movies or anime, dancing, taking care of my cats, or simply enjoying some music.
+I'm always on the lookout for new knowledge and experiences to help me grow. My dream is to build something bigger than myself someday, and I'm dedicated to acquiring the skills and insights needed to make that happen.</p>
+
+  <div style="margin-top:30px; display:flex; flex-direction:row; gap:25px;">
+
+    <div style="background:#112240; padding:20px; border-radius:12px; border:1px solid #64ffda22;">
+      <h3 style="color:#64ffda; margin-bottom:10px;">🎧 Favorite Music Artists</h3>
+      <div style="display:flex; flex-direction:row; justify-content:space-between; gap:15px; text-align:center; color:#8892b0;">
+        <div style="flex:1;">
+          <img src="laufey.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Laufey</div>
+        </div>
+        <div style="flex:1;">
+          <img src="fayewbster.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Faye Webster</div>
+        </div>
+        <div style="flex:1;">
+          <img src="lana.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Lana Del Rey</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#112240; padding:20px; border-radius:12px; border:1px solid #64ffda22;">
+      <h3 style="color:#64ffda; margin-bottom:10px;">🎮 Favorite Games</h3>
+      <div style="display:flex; flex-direction:row; gap:15px; justify-content:space-between; text-align:center; color:#8892b0;">
+        <div style="flex:1;">
+          <img src="aq.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Adventure Quest Worlds (AQW)</div>
+        </div>
+        <div style="flex:1;">
+          <img src="dota.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Dota 2</div>
+        </div>
+        <div style="flex:1;">
+          <img src="ml.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Mobile Legends</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div style="margin-top:30px; display:flex; flex-direction:row; gap:25px;">
+
+    <div style="background:#112240; padding:20px; border-radius:12px; border:1px solid #64ffda22;">
+      <h3 style="color:#64ffda; margin-bottom:10px;">Pets</h3>
+      <div style="display:flex; flex-direction:row; justify-content:space-between; gap:15px; text-align:center; color:#8892b0;">
+        <div style="flex:1;">
+          <img src="pet1.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Krazy</div>
+        </div>
+        <div style="flex:1;">
+          <img src="pet2.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Princess</div>
+        </div>
+        <div style="flex:1;">
+          <img src="pet3.jpg" style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <div>Panpan</div>
+        </div>
+      </div>
+    </div>
+  
+
+    
+
+  </div>
+
+   
+
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+    <img src="pc-build.jpg" alt="PC Build" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>🖥️ Personal Computer Building</h3>
+      <p>Its my first time building a computer and kinda nervous but i made it thanks to my parents money and to the internet who give me knowledge about computers, i spent alot of time researching about the parts of computer and how they work together.</p>
+    </div>
+    <div class="card">
+      <img src="lan-project.jpg" alt="LAN Project" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>🌐 Local Area Network</h3>
+      <p>Its our first semester project under Networking Subject, i learned alot of technical skills in this project such as crimping, troubleshooting and Network Designing, it makes me seek more knowledge in Networking and I see my future in that field..</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: zauldadenver@gmail.com</p>
+   <p>Mobile Number: 09931952431</p>
+</section>
+
+<footer>
+  <p>© 2026 Judexdj | Portfolio</p>
+</footer>
+
+<script>
+  const elements = document.querySelectorAll('section, .card, footer');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
